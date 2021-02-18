@@ -46,7 +46,7 @@ iris_dataframe = pd.DataFrame(X_train, columns=iris_dataset.feature_names)
 # 산점도 차트를 그리기
 pd.plotting.scatter_matrix(iris_dataframe, c=y_train, figsize=(15, 15), marker='o', hist_kwds={'bins':20}, s=60, alpha=.8, cmap=mglearn.cm3)
 # 화면 보여주기
-#plt.show()
+plt.show()
 # k 근접을 사용하기 위한 함수 n_neighbors는 근접 값을 몇개 찾을지 설정하는 것
 knn = KNeighborsClassifier(n_neighbors=1)
 # 군집화 진행 후 값 출력
