@@ -21,3 +21,15 @@ plt.ylabel('Second Property')
 print("X.shape : {}".format(X.shape))
 # 차트 보여주기
 plt.show()
+# 파형의 데이터 셋을 설정 샘플링은 40개
+X, y = mglearn.datasets.make_wave(n_samples=40)
+# 차트 그리기
+plt.plot(X, y, 'o')
+# y축의 제한을 -3부터 3까지
+plt.ylim(-3, 3)
+# x라벨을 설정
+plt.xlabel("property")
+# y라벨을 설정
+plt.ylabel("Target")
+# 그래프 보여주기
+plt.show()
