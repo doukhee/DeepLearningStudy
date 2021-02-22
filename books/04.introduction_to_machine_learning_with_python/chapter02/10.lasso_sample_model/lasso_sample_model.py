@@ -13,6 +13,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.linear_model import Ridge
 from sklearn.linear_model import Lasso
+
 # 보스턴 데이터를 확장해서 가져오기
 X, y = mglearn.datasets.load_extended_boston()
 # 학습 데이터 테스트 데이터로 랜덤하게 분류
