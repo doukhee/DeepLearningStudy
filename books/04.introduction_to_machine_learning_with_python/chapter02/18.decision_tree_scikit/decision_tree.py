@@ -43,7 +43,7 @@ dot.render(filename="tree")
 # 중요한 속성 출력
 print("property import : \r\n{}".format(tree.feature_importances_))
 
-# 그래프로 그리기 위한 함ㅁ쑷
+# 그래프로 그리기 위한 함수
 def plot_feature_importances_cancer(model):
     # 데이터의 수 가져오기
     n_features = cancer.data.shape[1]
