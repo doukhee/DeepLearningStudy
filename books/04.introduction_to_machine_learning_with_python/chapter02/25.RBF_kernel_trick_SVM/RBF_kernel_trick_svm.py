@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_breast_cancer
 from sklearn.svm import SVC
-
+import mglearn
+from IPython.display import display
 # 학습할 데이터 불러오기
 cancer = load_breast_cancer()
 # 학습할 데이터 분류하기
@@ -42,3 +43,20 @@ X_train_scaled = (X_train - min_on_training) / range_on_training
 print("property min value : \r\n{}".format(X_train_scaled.min(axis=0)))
 print("property max value : \r\n{}".format(X_train_scaled.max(axis=0)))
 
+# 테스트 세트에도 같은 작업을 적용하지만,
+# 훈련세트에서 계산한 최솟값과 범위를 사용합니다.
+X_test_scaled = (X_test - min_on_training) / range_on_training
+# 분류기 생성
+svc = SVC()
+# 학습 시키기
+svc.fit(X_train_scaled, y_train)
+# 정확도 출력
+print("train set accuracy : {:.3f}".format(svc.score(X_train_scaled, y_train)))
+print("test set accuracy : {:.3f}".format(svc.score(X_test_scaled, y_test)))
+# 분류기 생성
+svc = SVC(C=1000)
+# 학습 시키기
+svc.fit(X_train_scaled, y_train)
+# 정확도 출력
+print("train set accuracy : {:.3f}".format(svc.score(X_train_scaled, y_train)))
+print("test set accuracy : {:.3f}".format(svc.score(X_test_scaled, y_test)))
