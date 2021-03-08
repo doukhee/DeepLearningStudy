@@ -22,7 +22,7 @@ plt.ylabel("property 1")
 # 그래프 보여주기
 plt.show()
 
-# 다층퍼셉트론으로 학습 진행 은닉 계층을 10개로 설정
+# 다층퍼셉트론으로 학습 진행 10개의 유닛으로 설정된 은닉층
 mlp = MLPClassifier(solver='lbfgs', random_state=0, hidden_layer_sizes=[10]).fit(X_train, y_train)
 
 # 2차원 선점도 그리기
